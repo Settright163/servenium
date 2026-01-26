@@ -1,0 +1,216 @@
+/* Banner de versión */
+.arquitectura-banner {
+    background: rgba(0,51,86,0.3);
+    border: 1px solid rgba(0,64,108,0.5);
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,64,108,0.3);
+}
+
+.arquitectura-banner a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 8px;
+    transition: opacity 0.3s;
+}
+
+.arquitectura-banner a:hover {
+    opacity: 0.7;
+}
+
+/* --- LOGO CENTRAL --- */
+.logo-caja {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-imagen {
+    max-width: 700px;
+    height: auto;
+    display: block;
+}
+
+/* --- DIBUJOS DE FONDO CON CSS --- */
+/* Grafico izquierdo */
+.dibujo-izquierdo {
+    position: absolute;
+    left: 10%;
+    width: 100px;
+    height: 120px;
+    opacity: 0.7;
+    filter: blur(0.5px);
+}
+
+/* Contenedor inferior - base del stack */
+.dibujo-izquierdo::before {
+    content: '';    
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 70px;
+    height: 90px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 51, 86, 0.4) 0%,
+        rgba(0, 64, 108, 0.3) 100%
+    );
+    border: 1px solid rgba(0, 64, 108, 0.5);
+    border-radius: 4px;
+    box-shadow:
+        0 0 25px rgba(0, 64, 108, 0.5),
+        0 0 12px rgba(0, 58, 97, 0.3),
+        /* Nodo de conexión superior derecho */
+        55px -25px 0 3px rgba(0, 64, 108, 0.4),
+        55px -25px 0 5px rgba(0, 64, 108, 0.3);
+    transform: rotate(-8deg);
+}
+
+/* Contenedor superior apilado */
+.dibujo-izquierdo::after {
+    content: '';
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+    width: 55px;
+    height: 70px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 58, 97, 0.5) 0%,
+        rgba(0, 64, 108, 0.4) 100%
+    );
+    border: 1px solid rgba(0, 64, 108, 0.6);
+    border-radius: 4px;
+    box-shadow:
+        0 0 20px rgba(0, 64, 108, 0.6),
+        0 0 10px rgba(0, 58, 97, 0.4),
+        /* Nodo de conexión superior izquierdo */
+        -15px -20px 0 3px rgba(0, 58, 97, 0.4),
+        -15px -20px 0 5px rgba(0, 58, 97, 0.3);
+    transform: rotate(5deg);
+}
+
+/* Grafico derecho */
+.dibujo-derecho {
+    position: absolute;
+    right: 10%;
+    width: 110px;
+    height: 110px;
+    opacity: 0.7;
+    filter: blur(0.5px);
+}
+
+/* Nodo principal */
+.dibujo-derecho::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(
+        circle,
+        rgba(0, 64, 108, 0.6) 0%,
+        rgba(0, 58, 97, 0.3) 100%
+    );
+    border: 2px solid rgba(0, 64, 108, 0.7);
+    border-radius: 50%;
+    box-shadow:
+        0 0 25px rgba(0, 64, 108, 0.6),
+        0 0 12px rgba(0, 58, 97, 0.4),
+        /* Nodos secundarios */
+        45px -35px 0 8px rgba(0, 64, 108, 0.4),
+        45px -35px 0 10px rgba(0, 64, 108, 0.2),
+        -45px 35px 0 8px rgba(0, 58, 97, 0.4),
+        -45px 35px 0 10px rgba(0, 58, 97, 0.2);
+}
+
+/* Nodo adicional y líneas de conexión */
+.dibujo-derecho::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(
+        circle,
+        rgba(0, 58, 97, 0.5) 0%,
+        rgba(0, 51, 86, 0.2) 100%
+    );
+    border: 2px solid rgba(0, 58, 97, 0.6);
+    border-radius: 50%;
+    box-shadow:
+        0 0 18px rgba(0, 58, 97, 0.5),
+        0 0 8px rgba(0, 51, 86, 0.3),
+        /* Línea de conexión hacia el centro */
+        -25px 25px 0 2px rgba(0, 64, 108, 0.3);
+    transform: rotate(12deg);
+}
+
+/* Product description */
+.descripcion-producto {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: rgba(255,255,255,0.9);
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-weight: 400;
+}
+
+/* --- BOTON DE "SERVICIOS" --- */
+.btn-servicios {
+    background: var(--color-white);
+    color: var(--color-dark);
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+}
+
+.btn-servicios:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(255,255,255,0.3);
+}
+
+
+@media (max-width: 1024px) {
+    .logo-imagen {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dibujo-izquierdo,
+    .dibujo-derecho {
+        display: block;
+        width: 40px;
+        height: 40px;
+        opacity: 0.5;
+    }
+}
+@media (max-width: 768px) {
+    .main-contenido {
+        padding: 40px 0 80px;
+    }
+
+    .version-banner {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+    .logo-imagen {
+        max-width: 150px;
+    }
+}

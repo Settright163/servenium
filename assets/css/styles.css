@@ -1,14 +1,7 @@
 /* --- VARIABLES PRINCIPALES --- */
 :root {
-    --color-light: #003356;
-    --color-lighter: #003A61;
-    --color-lightest: #00406C;
     --color-dark: #00111C;
     --color-white: #ffffff;
-
-    --glow-1: rgba(0,64,108,0.6);
-    --glow-2: rgba(0,58,97,0.4);
-
     --font-primary: 'Inter', sans-serif;
 }
 
@@ -30,11 +23,13 @@ body {
 }
 
 /* --- FONDO DE ARCO BRILLANTE --- */
+/* Posteriormente puedo cambiarlo de body a un div
+para mas secciones debajo */
 body::before {
     content: '';
-    position: fixed;
+    position: fixed; /* Arco se mueve al scrollear */
     inset: auto 0 0 0;
-    height: 350px;
+    height: 45vh;
     background:
         radial-gradient(
             ellipse 120% 70% at 50% 100%,
@@ -51,24 +46,17 @@ body::before {
 
 /* --- TOP BANNER --- */
 .top-banner {
-    background: linear-gradient(
-        90deg,
-        #00A8E8 0%,
-        #0099FF 12%,
-        #0066FF 24%,
-        #5B9FFF 36%,
-        #00D4FF 48%,
-        #7BAFFF 60%,
-        #0099FF 72%,
-        #0066FF 84%,
-        #00A8E8 100%
-    );
+    background: linear-gradient(90deg, 
+    #00A8E8, 
+    #0066FF, 
+    #00D4FF, 
+    #0099FF, 
+    #00A8E8);
     padding: 8px 0;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
-    position: relative;
-    z-index: 1000;
+    z-index: 10;
     box-shadow:
         0 2px 20px rgba(0,212,255,0.4),
         0 0 30px rgba(0,153,255,0.3),
@@ -87,13 +75,12 @@ body::before {
 
 /* --- NAVBAR --- */
 .navbar {
-    background: transparent;
     padding: 20px 0;
     position: relative;
-    z-index: 100;
+    z-index: 10;
 }
 
-.navbar-brand {
+.navbar-marca {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -101,7 +88,7 @@ body::before {
 }
 
 /* contenedor del logo */
-.logo-container {
+.logo-contenedor {
     width: 50px;
     height: 50px;
     background: rgba(0,51,86,0.4);
@@ -114,7 +101,7 @@ body::before {
     overflow: hidden;
 }
 
-.logo-container::before {
+.logo-contenedor::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -125,8 +112,8 @@ body::before {
 
 /* --- ICONO NAVBAR --- */
 /* PENDIENTE POR IMPLEMENTAR */
-.logo-icon{
-    
+.logo-icono{
+    background-color: none;
 }
 
 /* Reutilizables de navegación */
@@ -138,10 +125,6 @@ body::before {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.navbar-nav .nav-item {
-    display: inline-block;
 }
 
 /* Enlaces de navegación */
@@ -157,22 +140,21 @@ body::before {
 .nav-link:hover,
 .nav-link:focus {
     color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
 }
 
 /* Texto del icono del la marca */
-.brand-text {
+.texto-marca {
     font-weight: 600;
     font-size: 18px;
     cursor: default;
 }
 
 /* Brand-text actúe como enlace visualmente */
-.brand-text.interactive {
+.texto-marca.interactive {
     cursor: pointer;
 }
-.brand-text.interactive:hover,
-.brand-text.interactive:focus {
+.texto-marca.interactive:hover,
+.texto-marca.interactive:focus {
     color: rgba(255,255,255,0.75);
 }
 
@@ -193,7 +175,7 @@ body::before {
 }
 
 /* Botón "SOBRE NOSTROS" del nabvar */
-.btn-header {
+.btn-sobre-nosotros {
     background: rgba(0,51,86,0.3);
     border: 1px solid rgba(0,64,108,0.5);
     color: var(--color-white);
@@ -207,7 +189,7 @@ body::before {
     box-shadow: 0 0 10px rgba(0,64,108,0.3);
 }
 
-.btn-header:hover {
+.btn-sobre-nosotros:hover {
     background: rgba(0,64,108,0.4);
     border-color: rgba(0,64,108,0.7);
     transform: translateY(-2px);
@@ -215,209 +197,21 @@ body::before {
 }
 
 /* --- CONTENIDO PRINCIPAL --- */
-.main-content {
+.main-contenido {
     position: relative;
     z-index: 10;
     padding: 60px 0 100px;
     text-align: center;
 }
 
-/* Banner de versión */
-.architecture-banner {
-    background: rgba(0,51,86,0.3);
-    border: 1px solid rgba(0,64,108,0.5);
-    border-radius: 12px;
-    padding: 12px 24px;
-    display: inline-block;
-    margin-bottom: 40px;
-    font-size: 14px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(0,64,108,0.3);
-}
-
-.architecture-banner a {
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 8px;
-    transition: opacity 0.3s;
-}
-
-.architecture-banner a:hover {
-    opacity: 0.7;
-}
-
-/* --- LOGO CENTRAL --- */
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 10;
-}
-
-.logo-image {
-    max-width: 700px;
-    height: auto;
-    display: block;
-}
 
 /* --- HEADLINE PRINCIPAL --- */
-.main-headline {
+.main-encabezado {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 30px;
     letter-spacing: -0.02em;
-}
-
-/* --- DIBUJOS DE FONDO CON CSS --- */
-/* Grafico izquierdo */
-.graphic-left {
-    position: absolute;
-    left: 10%;
-    width: 100px;
-    height: 120px;
-    opacity: 0.7;
-    filter: blur(0.5px);
-}
-
-/* Contenedor inferior - base del stack */
-.graphic-left::before {
-    content: '';    
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    width: 70px;
-    height: 90px;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 51, 86, 0.4) 0%,
-        rgba(0, 64, 108, 0.3) 100%
-    );
-    border: 1px solid rgba(0, 64, 108, 0.5);
-    border-radius: 4px;
-    box-shadow:
-        0 0 25px rgba(0, 64, 108, 0.5),
-        0 0 12px rgba(0, 58, 97, 0.3),
-        /* Nodo de conexión superior derecho */
-        55px -25px 0 3px rgba(0, 64, 108, 0.4),
-        55px -25px 0 5px rgba(0, 64, 108, 0.3);
-    transform: rotate(-8deg);
-}
-
-/* Contenedor superior apilado */
-.graphic-left::after {
-    content: '';
-    position: absolute;
-    bottom: 50px;
-    left: 25px;
-    width: 55px;
-    height: 70px;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 58, 97, 0.5) 0%,
-        rgba(0, 64, 108, 0.4) 100%
-    );
-    border: 1px solid rgba(0, 64, 108, 0.6);
-    border-radius: 4px;
-    box-shadow:
-        0 0 20px rgba(0, 64, 108, 0.6),
-        0 0 10px rgba(0, 58, 97, 0.4),
-        /* Nodo de conexión superior izquierdo */
-        -15px -20px 0 3px rgba(0, 58, 97, 0.4),
-        -15px -20px 0 5px rgba(0, 58, 97, 0.3);
-    transform: rotate(5deg);
-}
-
-/* Grafico derecho */
-.graphic-right {
-    position: absolute;
-    right: 10%;
-    width: 110px;
-    height: 110px;
-    opacity: 0.7;
-    filter: blur(0.5px);
-}
-
-/* Nodo principal */
-.graphic-right::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-15deg);
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(
-        circle,
-        rgba(0, 64, 108, 0.6) 0%,
-        rgba(0, 58, 97, 0.3) 100%
-    );
-    border: 2px solid rgba(0, 64, 108, 0.7);
-    border-radius: 50%;
-    box-shadow:
-        0 0 25px rgba(0, 64, 108, 0.6),
-        0 0 12px rgba(0, 58, 97, 0.4),
-        /* Nodos secundarios */
-        45px -35px 0 8px rgba(0, 64, 108, 0.4),
-        45px -35px 0 10px rgba(0, 64, 108, 0.2),
-        -45px 35px 0 8px rgba(0, 58, 97, 0.4),
-        -45px 35px 0 10px rgba(0, 58, 97, 0.2);
-}
-
-/* Nodo adicional y líneas de conexión */
-.graphic-right::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-    background: radial-gradient(
-        circle,
-        rgba(0, 58, 97, 0.5) 0%,
-        rgba(0, 51, 86, 0.2) 100%
-    );
-    border: 2px solid rgba(0, 58, 97, 0.6);
-    border-radius: 50%;
-    box-shadow:
-        0 0 18px rgba(0, 58, 97, 0.5),
-        0 0 8px rgba(0, 51, 86, 0.3),
-        /* Línea de conexión hacia el centro */
-        -25px 25px 0 2px rgba(0, 64, 108, 0.3);
-    transform: rotate(12deg);
-}
-
-/* Product description */
-.product-description {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.7;
-    color: rgba(255,255,255,0.9);
-    max-width: 700px;
-    margin: 0 auto 50px;
-    font-weight: 400;
-}
-
-/* --- BOTON DE "SERVICIOS" --- */
-.btn-services {
-    background: var(--color-white);
-    color: var(--color-dark);
-    padding: 16px 40px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 16px;
-    border: none;
-    transition: all 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 20px rgba(255,255,255,0.2);
-}
-
-.btn-services:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 30px rgba(255,255,255,0.3);
-    color: var(--color-dark);
 }
 
 /* --- ANIMACION BASADA EN CLASE --- */
@@ -437,13 +231,7 @@ body::before {
     .navbar-nav {
         gap: 20px;
     }
-
-    .graphic-left,
-    .graphic-right {
-        display: none;
-    }
-
-    .main-headline {
+    .main-encabezado {
         font-size: clamp(2.5rem, 10vw, 4rem);
     }
 }
@@ -451,24 +239,5 @@ body::before {
     .navbar-nav {
         gap: 15px;
         padding-top: 20px;
-    }
-
-    .main-content {
-        padding: 40px 0 80px;
-    }
-
-    .version-banner {
-        font-size: 12px;
-        padding: 10px 20px;
-    }
-}
-@media (max-width: 1024px) {
-    img[src*="logos/servenium"] {
-        max-width: 160px;
-    }
-}
-@media (max-width: 768px) {
-    img[src*="logos/servenium"] {
-        max-width: 120px;
     }
 }
