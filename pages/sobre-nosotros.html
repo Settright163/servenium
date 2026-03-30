@@ -1,49 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servenium - Sobre Nosotros</title>
 
     <base href="/servenium/">
-    
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/contacto.css">
 
-    <!-- SEO On Page -->
-    <title>Sobre Servenium | Homelab educativo y aprendizaje práctico</title>
-    <meta name="description"
-    content="Conoce qué es Servenium, un homelab educativo creado para aprender redes, servidores y Docker mediante práctica real." />
-
+    <title>Contáctanos | Servenium</title>
+    <meta name="description" content="Contacta con Servenium por WhatsApp, YouTube, Instagram o correo. Envíanos un mensaje desde la web." />
 </head>
 <body>
-    <!-- Top Banner -->
     <div id="top-banner"></div>
-    
-    <!-- Navbar -->
     <div id="navbar"></div>
 
-    <main class="main-contenido">
-        <h1 class="main-encabezado fade-in-up">En Proceso...</h1>
+    <main class="contacto-main">
+        <div class="container">
+            <header class="text-center mb-5">
+                <h1 class="main-encabezado fade-in-up mb-3">Contáctanos</h1>
+                <p class="contacto-lead fade-in-up">
+                    ¿Dudas sobre el homelab, los servicios o el proyecto educativo? Escríbenos o síguenos en las redes que usamos.
+                </p>
+            </header>
+
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <h2 class="contacto-h2 fade-in-up">Canales</h2>
+                    <div class="contacto-redes fade-in-up">
+                        <a class="contacto-red-card contacto-red-card--yt" href="#">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>
+                                <span class="contacto-red-titulo">YouTube</span>
+                                <span class="contacto-red-sub">Nuestro canal: demostraciones del homelab y más — entra y échale un vistazo</span>
+                            </span>
+                        </a>
+                        <a class="contacto-red-card contacto-red-card--wa" href="#">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span>
+                                <span class="contacto-red-titulo">WhatsApp</span>
+                                <span class="contacto-red-sub">Respuesta rápida por aquí cuando te surja cualquier duda</span>
+                            </span>
+                        </a>
+                        <a class="contacto-red-card contacto-red-card--ig" href="#">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>
+                                <span class="contacto-red-titulo">Instagram</span>
+                                <span class="contacto-red-sub">Avances, fotos del rack y un poco de detrás de cámaras</span>
+                            </span>
+                        </a>
+                        <a class="contacto-red-card contacto-red-card--mail" href="#" data-contact-mail-link aria-disabled="true">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>
+                                <span class="contacto-red-titulo">Gmail</span>
+                                <span class="contacto-red-sub">Escríbenos por correo para consultas o colaboraciones</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="contacto-form-card fade-in-up">
+                        <h2 class="contacto-h2 mb-3">Envíanos un mensaje</h2>
+                        <div id="contacto-aviso-config" class="contacto-aviso" hidden>
+                            Sustituye <strong>Unknown</strong> en <code class="small">assets/js/contacto.js</code> por tu dirección de Gmail para habilitar el envío.
+                        </div>
+                        <form id="contacto-form" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label" for="contacto-nombre">Nombre</label>
+                                <input type="text" class="form-control" id="contacto-nombre" name="nombre" required autocomplete="name" placeholder="Tu nombre" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="contacto-email">Correo electrónico</label>
+                                <input type="email" class="form-control" id="contacto-email" name="email" required autocomplete="email" placeholder="tucorreo@ejemplo.com" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label" for="contacto-mensaje">Mensaje</label>
+                                <textarea class="form-control" id="contacto-mensaje" name="mensaje" required placeholder="Escribe aquí tu mensaje..."></textarea>
+                            </div>
+                            <button type="submit" class="btn contacto-btn-enviar contacto-btn-enviar--ancho">Enviar con mi correo</button>
+                            <p id="contacto-feedback" class="contacto-feedback" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <!-- Footer Vacio por el Momento-->
-    </footer>
+    <div id="site-footer"></div>
 
-    <!-- Paquete de JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script de animación -->
     <script src="assets/js/main.js"></script>
-    <!-- Script para incluir componentes -->
+    <script src="assets/js/contacto.js"></script>
     <script src="assets/js/include.js"></script>
 </body>
 </html>

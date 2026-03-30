@@ -17,6 +17,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/recursos.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
 
     <!-- SEO On Page -->
     <title>Recursos educativos | Guías, herramientas y documentación | Servenium</title>
@@ -31,14 +33,184 @@
     <!-- Navbar -->
     <div id="navbar"></div>
 
-    <main class="main-contenido">
-        <h1 class="main-encabezado fade-in-up">En Proceso...</h1>
-    </main>
+	<!-- Contenido Principal -->
+	<main>
+		<!-- Div 1: Streaming-->
+		<div class="container fade-in-up">
+			<h2 class="title">Compose del Streaming</h2>
+			<pre class="code-panel" data-language="docker-compose" aria-label="docker compose snippet">
+<code>name: media-stack
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    ports:
+      - "8096:8096"
+    volumes:
+      - /DATA/AppData/jellyfin/config:/config
+      - /home/juan/jellyfin-cache:/cache
+      - /DATA/Media/Movies:/movies
+      - /DATA/Media/Shows:/tv
+    restart: unless-stopped
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      TZ: America/Bogota
+      LOG_LEVEL: debug
+    ports:
+      - "5055:5055"
+    volumes:
+      - /DATA/AppData/jellyseerr:/app/config
+    restart: unless-stopped
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Bogota
+    ports:
+      - "9696:9696"
+    volumes:
+      - /DATA/AppData/prowlarr:/config
+    restart: unless-stopped
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Bogota
+      WEBUI_PORT: 5080
+    ports:
+      - "5080:5080"
+      - "6881:6881/tcp"
+      - "6881:6881/udp"
+    volumes:
+      - /DATA/AppData/qbittorrent:/config
+      - /DATA/Downloads:/downloads
+      - /DATA/Media/Movies:/movies
+      - /DATA/Media/Shows:/tv
+    restart: unless-stopped
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Bogota
+    ports:
+      - "7878:7878"
+    volumes:
+      - /DATA/AppData/radarr:/config
+      - /DATA/Media/Movies:/movies
+      - /DATA/Downloads:/downloads
+    restart: unless-stopped
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Bogota
+    ports:
+      - "8989:8989"
+    volumes:
+      - /DATA/AppData/sonarr:/config
+      - /DATA/Media/Shows:/tv
+      - /DATA/Downloads:/downloads
+    restart: unless-stopped</code>
+			</pre>
+		</div>
+		<br><br>
 
-    <footer>
-        <!-- Footer Vacio por el Momento-->
-    </footer>
+		<!-- Div 2: Minecraft-->
+		<div class="container fade-in-up">
+			<h2 class="title">Compose del Servidor de Minecraft</h2>
+			<pre class="code-panel" data-language="docker-compose" aria-label="docker compose snippet">
+<code>version: "3.8"
+services:
+  crafty:
+    container_name: crafty
+    image: registry.gitlab.com/crafty-controller/crafty-4:4.4.11
+    restart: always
+    environment:
+      TZ: Etc/UTC
+    ports:
+      - "8111:8443"      # Panel web (HTTPS)
+      - "8112:8123"      # API / WebSocket
+      - "25565:25565"    # Minecraft principal (TCP)
+      - "25565:25565/udp"
+      - "19132:19132/udp" # Bedrock
+    volumes:
+      - /DATA/AppData/crafty/backups:/crafty/backups
+      - /DATA/AppData/crafty/logs:/crafty/logs
+      - /DATA/AppData/crafty/servers:/crafty/servers
+      - /DATA/AppData/crafty/config:/crafty/app/config
+      - /DATA/AppData/crafty/import:/crafty/import</code>
+			</pre>
+		</div>
+		<br><br>
 
+		<!-- Div 3: Pagina Web -->
+		<div class="container fade-in-up">
+			<h2 class="title">Compose de la Pagina Web</h2>
+			<pre class="code-panel" data-language="docker-compose" aria-label="docker compose snippet">
+<code>name: static-web
+services:
+  web:
+    image: nginx:latest
+    container_name: web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+    restart: unless-stopped</code>
+			</pre>
+		</div>
+		<br><br>
+
+		<!-- Div 4: Tunel de Minecraft -->
+		<div class="container fade-in-up">
+			<h2 class="title">Compose del PlayIt(Tunel del Minecraft)</h2>
+			<pre class="code-panel" data-language="docker-compose" aria-label="docker compose snippet">
+<code>name: playit-minecraft
+services:
+  playit:
+    image: ghcr.io/playit-cloud/playit-agent:0.16
+    container_name: playit
+    environment:
+      SECRET_KEY: ${PLAYIT_SECRET}
+    network_mode: host
+    restart: unless-stopped</code>
+			</pre>
+		</div>
+		<br><br>
+
+		<!-- Div 5: Cloudflared -->
+		<div class="container fade-in-up">
+			<h2 class="title">Compose del Cloudflared(Aplicacion de los Tuneles)</h2>
+			<pre class="code-panel" data-language="docker-compose" aria-label="docker compose snippet">
+<code>version: "3.8"
+services:
+  cloudflared:
+    container_name: cloudflared
+    image: wisdomsky/cloudflared-web:2025.2.1
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/casaos-cloudflared/config:/config
+    ports:
+      - "14333:14333"</code>
+        	</pre>
+		</div>
+		<br><br>
+	</main>
+
+    <div id="site-footer"></div>
+
+    <script src="assets/js/recursos.js"></script>
     <!-- Paquete de JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Script de animación -->

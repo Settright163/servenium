@@ -1,0 +1,72 @@
+/* Footer global (fragmento en assets/components/footer-*.html). Iconos vía Font Awesome (import). */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
+/* Por encima del arco azul (body::before, z-index 1); sin tapar el degradado del contenido. */
+#site-footer {
+  position: relative;
+  z-index: 11;
+}
+
+.site-footer-global {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #b1b1b1;
+  margin-top: auto;
+}
+
+.site-footer-global .site-footer-main {
+  background-color: #151515;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+  /* Separa del degradado inferior sin ocultarlo en el área del main */
+  box-shadow:
+    0 -24px 48px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.site-footer-global .site-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #fff;
+  color: #151515;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.site-footer-global .site-footer-social a:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+  color: #000;
+}
+
+.site-footer-global .site-footer-gplus {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.site-footer-global .site-footer-nav a {
+  color: #e8e8e8;
+  text-decoration: none;
+  padding: 0 0.35rem;
+}
+
+.site-footer-global .site-footer-nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer-global .site-footer-copy {
+  background-color: #000;
+  color: #b1b1b1;
+  font-size: 0.875rem;
+  padding: 0.65rem 1rem;
+}
+
+.site-footer-global .site-footer-copy small {
+  color: inherit;
+}

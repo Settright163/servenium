@@ -13,6 +13,7 @@ async function incluirComponente(selector, path) {
   	}	
 }
 
-// Carga de los Componentes Reutilizables
+// Carga de los Componentes Reutilizables (rutas relativas al <base href> del documento)
 incluirComponente("#top-banner", "assets/components/top-banner.html");
 incluirComponente("#navbar", "assets/components/navbar.html");
+incluirComponente("#site-footer", "assets/components/footer.html");
