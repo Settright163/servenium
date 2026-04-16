@@ -241,3 +241,34 @@ body::before {
         padding-top: 20px;
     }
 }
+
+/* Cloud logo CSS */
+.logo-icono {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,64,108,0.8);
+    border-radius: 50%;
+}
+
+.logo-icono::before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background: rgba(0,64,108,0.8);
+    border-radius: 50%;
+    top: -30%;
+    left: 15%;
+}
+
+.logo-icono::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: rgba(0,64,108,0.8);
+    border-radius: 50%;
+    top: -20%;
+    right: 10%;
+}
