@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servenium - Actualizaciones</title>
 
-    <base href="/servenium/">
-    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,44 +13,175 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="/servenium/assets/css/styles.css">
+    <link rel="stylesheet" href="/servenium/assets/css/footer.css">
 
-    <!-- SEO On Page -->
+    <style>
+        .actualizaciones-pagina {
+            max-width: 1120px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .actualizacion-bloque {
+            margin-bottom: 3.5rem;
+        }
+        .actualizacion-bloque:last-of-type {
+            margin-bottom: 0;
+        }
+        .actualizacion-imagen-wrap {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 64, 108, 0.45);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(0, 168, 232, 0.08);
+            background: rgba(0, 51, 86, 0.2);
+        }
+        .actualizacion-imagen-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .actualizacion-titulo-caja {
+            background: rgba(0, 51, 86, 0.35);
+            border: 1px solid rgba(0, 64, 108, 0.55);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            font-size: clamp(1.25rem, 3vw, 1.7rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.02em;
+            backdrop-filter: blur(8px);
+        }
+        .actualizacion-texto-caja {
+            background: rgba(0, 17, 28, 0.45);
+            border: 1px solid rgba(0, 64, 108, 0.35);
+            border-radius: 12px;
+            padding: 1.25rem 1.35rem;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+        @media (max-width: 767.98px) {
+            .actualizacion-bloque .actualizacion-texto-col {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+
     <title>Actualizaciones del proyecto | Cambios y mejoras | Servenium</title>
     <meta name="description"
     content="Registro de actualizaciones del homelab Servenium. Nuevos servicios, mejoras técnicas, optimizaciones y avances del proyecto." />
-
 </head>
 <body>
-    <!-- Top Banner -->
+
     <div id="top-banner"></div>
-    
-    <!-- Navbar -->
     <div id="navbar"></div>
 
     <main class="main-contenido">
-        <div class="container">
-            <h1 class="main-encabezado fade-in-up">En Proceso...</h1>
-            <div class="text-start mx-auto fade-in-up" style="max-width: 720px;">
-                <p class="descripcion-producto mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam adipiscing dignissim diam vitae ornare. Aliquam erat volutpat. Etiam lectus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum.</p>
-                <p class="descripcion-producto mb-4">Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-                <p class="descripcion-producto mb-4">Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis.</p>
-                <p class="descripcion-producto mb-4">Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
-                <p class="descripcion-producto mb-4">Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient.</p>
-                <p class="descripcion-producto mb-4">Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui.</p>
-                <p class="descripcion-producto mb-0">Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-            </div>
+        <div class="container actualizaciones-pagina">
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/1. Escritorio de Linux Mint.webp" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-2 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Escritorio de Linux Mint</div><div class="actualizacion-texto-caja">Configuración inicial del sistema operativo anfitrión que sirve como base estable del homelab Servenium.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-2"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/3. Inicio de Sesion en el Panel de CasaOS.webp" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-1 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Inicio de Sesion en el Panel de CasaOS</div><div class="actualizacion-texto-caja">Acceso al panel central desde donde se gestionan aplicaciones, contenedores y recursos del servidor.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/4. Dashboard de CasaOS.webp" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-2 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Dashboard de CasaOS</div><div class="actualizacion-texto-caja">Vista general del estado del homelab mostrando servicios activos y consumo de recursos.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-2"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/6. Jellyfin.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-1 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Jellyfin</div><div class="actualizacion-texto-caja">Implementación del servidor multimedia autoalojado para streaming interno dentro de la red local.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/7. Puerto de Crafty.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-2 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Puerto de Crafty</div><div class="actualizacion-texto-caja">Asignación de puertos y configuración de red para permitir el acceso al panel del servidor Minecraft.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-2"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/8. Puerto de Pagina Web.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-1 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Puerto de Pagina Web</div><div class="actualizacion-texto-caja">Configuración del acceso HTTP interno para alojar la página oficial del proyecto Servenium.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/9. Interfaz Jellyfin (Streaming).jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-2 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Interfaz Jellyfin (Streaming)</div><div class="actualizacion-texto-caja">Pruebas de reproducción multimedia verificando acceso fluido desde distintos dispositivos.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-2"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/10. Interfaz Jellyseerr.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-1 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Interfaz Jellyseerr</div><div class="actualizacion-texto-caja">Integración del sistema de solicitudes automáticas conectado con gestores multimedia.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/11. Vista de Pagina Web Simple.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-2 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Vista de Pagina Web Simple</div><div class="actualizacion-texto-caja">Primer despliegue funcional del sitio web del proyecto dentro del servidor local.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-2"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/12. Dashboard de Crafty.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-1 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Dashboard de Crafty</div><div class="actualizacion-texto-caja">Panel de control del servidor Minecraft mostrando monitoreo y administración de jugadores.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/13. Juego en Primera Persona.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-2 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Juego en Primera Persona</div><div class="actualizacion-texto-caja">Pruebas de rendimiento del servidor verificando estabilidad durante sesiones activas.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-2"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/14. Multijugador.jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-1 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Multijugador</div><div class="actualizacion-texto-caja">Validación del entorno multijugador confirmando conectividad entre usuarios externos.</div></div>
+                </div>
+            </section>
+
+            <section class="actualizacion-bloque fade-in-up">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1"><div class="actualizacion-imagen-wrap"><img src="/servenium/assets/img/Actualizaciones/15. Tunel de Playit (Server de Minecraft).jpg" loading="lazy" /></div></div>
+                    <div class="col-md-6 order-md-2 actualizacion-texto-col"><div class="actualizacion-titulo-caja">Tunel de Playit (Server de Minecraft)</div><div class="actualizacion-texto-caja">Implementación del túnel Playit para permitir acceso externo seguro al servidor sin abrir puertos públicos.</div></div>
+                </div>
+            </section>
+
         </div>
     </main>
 
     <div id="site-footer"></div>
 
-    <!-- Paquete de JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script de animación -->
-    <script src="assets/js/main.js"></script>
-    <!-- Script para incluir componentes -->
-    <script src="assets/js/include.js"></script>
+    <script src="/servenium/assets/js/main.js"></script>
+    <script src="/servenium/assets/js/include-pages.js"></script>
 </body>
 </html>

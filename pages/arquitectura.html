@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servenium - Arquitectura</title>
 
-    <base href="/servenium/">
-    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,44 +13,261 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="/servenium/assets/css/styles.css">
+    <link rel="stylesheet" href="/servenium/assets/css/footer.css">
 
-    <!-- SEO On Page -->
+    <style>
+        .arquitectura-pagina {
+            max-width: 1120px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .arquitectura-bloque {
+            margin-bottom: 3.5rem;
+        }
+        .arquitectura-bloque:last-of-type {
+            margin-bottom: 0;
+        }
+        .arquitectura-imagen-wrap {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 64, 108, 0.45);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(0, 168, 232, 0.08);
+            background: rgba(0, 51, 86, 0.2);
+        }
+        .arquitectura-imagen-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .arquitectura-titulo-caja {
+            background: rgba(0, 51, 86, 0.35);
+            border: 1px solid rgba(0, 64, 108, 0.55);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.02em;
+            backdrop-filter: blur(8px);
+        }
+        .arquitectura-texto-caja {
+            background: rgba(0, 17, 28, 0.45);
+            border: 1px solid rgba(0, 64, 108, 0.35);
+            border-radius: 12px;
+            padding: 1.25rem 1.35rem;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+        @media (max-width: 767.98px) {
+            .arquitectura-bloque .arquitectura-texto-col {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+
     <title>Arquitectura del homelab | Red local y servicios | Servenium</title>
     <meta name="description"
-    content="AnÃ¡lisis de la arquitectura del homelab Servenium: red local, contenedores Docker, flujo de servicios y diseÃ±o tÃ©cnico." />
-
+    content="Análisis de la arquitectura del homelab Servenium: red local, contenedores Docker, flujo de servicios y diseño técnico." />
 </head>
 <body>
-    <!-- Top Banner -->
-    <div id="top-banner"></div>
-    
-    <!-- Navbar -->
-    <div id="navbar"></div>
 
-    <main class="main-contenido">
-        <div class="container">
-            <h1 class="main-encabezado fade-in-up">En Proceso...</h1>
-            <div class="text-start mx-auto fade-in-up" style="max-width: 720px;">
-                <p class="descripcion-producto mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac erat ante. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p class="descripcion-producto mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
-                <p class="descripcion-producto mb-4">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer mollis interdum lorem eu convallis. Maecenas in metus at quam viverra commodo vel a lacus. Nulla facilisi. Aenean nec eros vestibulum, faucibus elit nec, dignissim neque. Phasellus scelerisque dignissim nibh, sed tincidunt velit imperdiet id.</p>
-                <p class="descripcion-producto mb-4">Fusce convallis metus id felis luctus adipiscing. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</p>
-                <p class="descripcion-producto mb-4">Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. Phasellus ultrices nulla quis nibh. Quisque a lectus. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-                <p class="descripcion-producto mb-4">Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.</p>
-                <p class="descripcion-producto mb-0">Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean porta magna vel nisi. Donec fermentum. Maecenas tempus tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p>
-            </div>
-        </div>
-    </main>
+<div id="top-banner"></div>
+<div id="navbar"></div>
 
-    <div id="site-footer"></div>
+<main class="main-contenido">
+<div class="container arquitectura-pagina">
 
-    <!-- Paquete de JS de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script de animaciÃ³n -->
-    <script src="assets/js/main.js"></script>
-    <!-- Script para incluir componentes -->
-    <script src="assets/js/include.js"></script>
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-1">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/CasaOS.jpg" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-2 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">CasaOS</div>
+<div class="arquitectura-texto-caja">
+Sistema base del homelab que centraliza la gestión de servicios, contenedores y almacenamiento mediante una interfaz web sencilla.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-2">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Crafty.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-1 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Crafty</div>
+<div class="arquitectura-texto-caja">
+Panel de administración para servidores Minecraft que permite controlar usuarios, recursos y estados del servidor desde navegador.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-1">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Docker.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-2 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Docker</div>
+<div class="arquitectura-texto-caja">
+Tecnología de contenedores utilizada para aislar servicios, facilitar despliegues rápidos y mantener la arquitectura modular.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-2">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Jellyfin.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-1 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Jellyfin</div>
+<div class="arquitectura-texto-caja">
+Servidor multimedia autoalojado que organiza películas y series permitiendo streaming local sin depender de servicios externos.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-1">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Jellyseerr.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-2 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Jellyseerr</div>
+<div class="arquitectura-texto-caja">
+Interfaz de solicitudes multimedia que automatiza peticiones de contenido integrándose con el sistema de descarga y gestión.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-2">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Linux Mint.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-1 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Linux Mint</div>
+<div class="arquitectura-texto-caja">
+Sistema operativo anfitrión del homelab, elegido por su estabilidad, eficiencia y compatibilidad con servicios de servidor.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-1">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/NGINX.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-2 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">NGINX</div>
+<div class="arquitectura-texto-caja">
+Proxy reverso encargado de enrutar solicitudes hacia cada servicio interno usando dominios locales dentro de la red.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-2">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Prowlarr.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-1 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Prowlarr</div>
+<div class="arquitectura-texto-caja">
+Administrador central de indexadores que conecta motores de búsqueda con Radarr y Sonarr para automatizar descargas.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-1">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Qbittorrent.jpg" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-2 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Qbittorrent</div>
+<div class="arquitectura-texto-caja">
+Cliente de descargas automatizado que recibe tareas desde los gestores multimedia y administra transferencias.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-2">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Radarr.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-1 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Radarr</div>
+<div class="arquitectura-texto-caja">
+Sistema de gestión automática de películas que busca, descarga y organiza contenido dentro del servidor multimedia.
+</div>
+</div>
+</div>
+</section>
+
+<section class="arquitectura-bloque fade-in-up">
+<div class="row align-items-center g-4 g-lg-5">
+<div class="col-md-6 order-md-1">
+<div class="arquitectura-imagen-wrap">
+<img src="/servenium/assets/img/Arquitectura/Sonarr.png" loading="lazy" />
+</div>
+</div>
+<div class="col-md-6 order-md-2 arquitectura-texto-col">
+<div class="arquitectura-titulo-caja">Sonarr</div>
+<div class="arquitectura-texto-caja">
+Gestor automatizado de series que monitorea episodios nuevos y mantiene organizada la biblioteca multimedia del homelab.
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/servenium/assets/js/main.js"></script>
+<script src="/servenium/assets/js/include-pages.js"></script>
+
 </body>
 </html>

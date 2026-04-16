@@ -2,7 +2,7 @@
  * Sustituye 'Unknown' por tu Gmail (solo la parte antes de @ o el correo completo).
  * Ejemplo: 'tuprojecto@gmail.com'
  */
-const EMAIL_DESTINO = 'Unknown';
+const EMAIL_DESTINO = 'servidortresenuno@gmail.com';
 
 (function () {
   function esCorreoValidoParaEnvio(val) {

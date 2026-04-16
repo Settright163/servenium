@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servenium - Servicios</title>
 
-    <base href="/servenium/">
-    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,8 +13,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="/servenium/assets/css/styles.css">
+    <link rel="stylesheet" href="/servenium/assets/css/footer.css">
+
+    <style>
+        .servicios-pagina {
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .servicio-bloque {
+            margin-bottom: 3.5rem;
+        }
+        .servicio-bloque:last-of-type {
+            margin-bottom: 0;
+        }
+        .servicio-imagen-wrap {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 64, 108, 0.45);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(0, 168, 232, 0.08);
+            background: rgba(0, 51, 86, 0.2);
+        }
+        .servicio-imagen-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            vertical-align: middle;
+        }
+        .servicio-titulo-caja {
+            background: rgba(0, 51, 86, 0.35);
+            border: 1px solid rgba(0, 64, 108, 0.55);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.02em;
+            backdrop-filter: blur(8px);
+        }
+        .servicio-texto-caja {
+            background: rgba(0, 17, 28, 0.45);
+            border: 1px solid rgba(0, 64, 108, 0.35);
+            border-radius: 12px;
+            padding: 1.25rem 1.35rem;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+        @media (max-width: 767.98px) {
+            .servicio-bloque .servicio-texto-col {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
 
     <!-- SEO On Page -->
     <title>Servicios del homelab | Docker, DNS, Proxy y más | Servenium</title>
@@ -28,22 +81,73 @@
 <body>
     <!-- Top Banner -->
     <div id="top-banner"></div>
-    
+
     <!-- Navbar -->
     <div id="navbar"></div>
 
     <main class="main-contenido">
-        <div class="container">
-            <h1 class="main-encabezado fade-in-up">En Proceso...</h1>
-            <div class="text-start mx-auto fade-in-up" style="max-width: 720px;">
-                <p class="descripcion-producto mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.</p>
-                <p class="descripcion-producto mb-4">Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis.</p>
-                <p class="descripcion-producto mb-4">Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-                <p class="descripcion-producto mb-4">Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.</p>
-                <p class="descripcion-producto mb-4">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique. Morbi mattis ullamcorper velit. Phasellus dolor. Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi tristique senectus et netus.</p>
-                <p class="descripcion-producto mb-4">Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem ut diam posuere cursus interdum aliquet ultrices. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero.</p>
-                <p class="descripcion-producto mb-0">Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.</p>
-            </div>
+        <div class="container servicios-pagina">
+
+            <!-- Bloque 1 -->
+            <section class="servicio-bloque fade-in-up" aria-labelledby="servicio-titulo-minecraft">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1">
+                        <div class="servicio-imagen-wrap">
+                            <img src="/servenium/assets/img/Servicios/Minecraft.png" alt="Servicio Minecraft en el homelab Servenium" loading="lazy" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-md-2 servicio-texto-col">
+                        <div id="servicio-titulo-minecraft" class="servicio-titulo-caja">Minecraft</div>
+                        <div class="servicio-texto-caja">
+                            Servidor local de Minecraft implementado como entorno educativo interactivo dentro del proyecto Servenium. 
+                            Permite a los estudiantes conectarse en red local para experimentar conceptos reales de hosting, administración 
+                            de servidores, optimización de recursos y gestión de usuarios, demostrando cómo un servicio de entretenimiento 
+                            puede convertirse en una herramienta práctica de aprendizaje tecnológico.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bloque 2 -->
+            <section class="servicio-bloque fade-in-up" aria-labelledby="servicio-titulo-streaming">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-2">
+                        <div class="servicio-imagen-wrap">
+                            <img src="/servenium/assets/img/Servicios/Streaming.png" alt="Servicio de streaming multimedia en Servenium" loading="lazy" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-md-1 servicio-texto-col">
+                        <div id="servicio-titulo-streaming" class="servicio-titulo-caja">Streaming</div>
+                        <div class="servicio-texto-caja">
+                            Plataforma de streaming multimedia local diseñada para compartir contenido educativo y audiovisual sin depender 
+                            de servicios externos en internet. Utilizando tecnologías open source, el sistema permite gestionar bibliotecas 
+                            multimedia, controlar accesos y demostrar el funcionamiento real de servidores de distribución de contenido 
+                            dentro de una infraestructura doméstica optimizada.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bloque 3 -->
+            <section class="servicio-bloque fade-in-up" aria-labelledby="servicio-titulo-website">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-6 order-md-1">
+                        <div class="servicio-imagen-wrap">
+                            <img src="/servenium/assets/img/Servicios/Website.png" alt="Servidor web y sitio del proyecto Servenium" loading="lazy" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-md-2 servicio-texto-col">
+                        <div id="servicio-titulo-website" class="servicio-titulo-caja">Website</div>
+                        <div class="servicio-texto-caja">
+                            Sitio web oficial del proyecto Servenium alojado directamente en el servidor local. Funciona como plataforma 
+                            informativa del homelab y evidencia práctica del despliegue de servicios web reales mediante tecnologías como 
+                            contenedores, servidores HTTP y administración de red local, integrando documentación, presentación académica 
+                            y demostración funcional del proyecto educativo InnovaServer EDU.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
 
@@ -51,9 +155,7 @@
 
     <!-- Paquete de JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script de animación -->
-    <script src="assets/js/main.js"></script>
-    <!-- Script para incluir componentes -->
-    <script src="assets/js/include.js"></script>
+    <script src="/servenium/assets/js/main.js"></script>
+    <script src="/servenium/assets/js/include-pages.js"></script>
 </body>
 </html>
