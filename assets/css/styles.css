@@ -242,34 +242,39 @@ body::before {
     }
 }
 
-/* Cloud logo CSS */
+/* ===============================
+   Cloud Logo (FIXED VERSION)
+================================ */
+
 .logo-icono {
     position: relative;
-    width: 90%;
-    height: 70%;
-    background: rgba(0,64,108,0.8);
-    border-radius: 50%;
-    margin: auto;
+    width: 32px;
+    height: 18px;
+    background: rgba(0,168,232,0.95);
+    border-radius: 20px;
+    z-index: 2;
 }
 
+/* Bulto izquierdo */
 .logo-icono::before {
     content: '';
     position: absolute;
-    width: 60%;
-    height: 60%;
-    background: rgba(0,64,108,0.8);
+    width: 18px;
+    height: 18px;
+    background: inherit;
     border-radius: 50%;
-    top: -25%;
-    left: 10%;
+    bottom: 6px;
+    left: -6px;
 }
 
+/* Bulto derecho */
 .logo-icono::after {
     content: '';
     position: absolute;
-    width: 50%;
-    height: 50%;
-    background: rgba(0,64,108,0.8);
+    width: 22px;
+    height: 22px;
+    background: inherit;
     border-radius: 50%;
-    top: -15%;
-    right: 5%;
+    bottom: 6px;
+    right: -8px;
 }
